@@ -151,7 +151,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="construct.h" />
+    <ClInclude Include="exchange.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="Read.h" />
+    <ClInclude Include="reconstruct.h" />
+    <ClInclude Include="Tour.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ParaDARP.cpp" />
