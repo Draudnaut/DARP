@@ -33,12 +33,18 @@
     <ClInclude Include="reconstruct.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="basic_datastructure.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="ParaDARP.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Read.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
