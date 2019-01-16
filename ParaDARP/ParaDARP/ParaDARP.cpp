@@ -3,13 +3,17 @@
 
 #include "pch.h"
 #include "Read.h"
+#include "config.h"
 #include <iostream>
-
+Point vertex_list[maxn];
 int main(int argc,char* argv[])
 {
 	parameter para;
+	int vehicle_number, vehicle_distance, vehicle_capacity, ridetime,vertex_number;
 	para = analyse_input_para(argc, argv);
-	printf("%d %s\n", para.k, para.path.c_str());
+	read_data(para.path, vertex_list,vehicle_number,vehicle_distance,vehicle_capacity,ridetime,vertex_number);
+	for (int i=0;i<=vertex_number;i++)
+		printf("%d %lf %lf %d %d %d %d\n", vertex_list[i].id, vertex_list[i].x, vertex_list[i].y, vertex_list[i].service_time, vertex_list[i].quality, vertex_list[i].time_window_start, vertex_list[i].time_window_end);
 	return 0;
 }
 
