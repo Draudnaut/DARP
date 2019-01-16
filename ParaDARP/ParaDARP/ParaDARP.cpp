@@ -5,15 +5,21 @@
 #include "Read.h"
 #include "config.h"
 #include <iostream>
+#include <algorithm>
 Point vertex_list[maxn];
+int cmp(Point a, Point b) {
+	if (a.time_window_end < b.time_window_end) return 1;
+	else if (a.time_window_start < b.time_window_start) return 1;
+	else return 0;
+}
 int main(int argc,char* argv[])
 {
 	parameter para;
 	int vehicle_number, vehicle_distance, vehicle_capacity, ridetime,vertex_number;
 	para = analyse_input_para(argc, argv);
 	read_data(para.path, vertex_list,vehicle_number,vehicle_distance,vehicle_capacity,ridetime,vertex_number);
-	for (int i=0;i<=vertex_number;i++)
-		printf("%d %lf %lf %d %d %d %d\n", vertex_list[i].id, vertex_list[i].x, vertex_list[i].y, vertex_list[i].service_time, vertex_list[i].quality, vertex_list[i].time_window_start, vertex_list[i].time_window_end);
+	std::sort(vertex_list + 1, vertex_list + vertex_number + 1, cmp);
+
 	return 0;
 }
 
