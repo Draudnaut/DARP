@@ -1,4 +1,5 @@
 #pragma once
+#include <string>
 struct Point {
 	int id;
 	double x;
@@ -11,4 +12,8 @@ struct Point {
 struct request{
 	Point pickup;
 	Point delivery;
+};
+struct parameter {
+	int k;
+	std::string path;
 };

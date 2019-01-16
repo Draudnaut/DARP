@@ -2,11 +2,15 @@
 //
 
 #include "pch.h"
+#include "Read.h"
 #include <iostream>
 
-int main()
+int main(int argc,char* argv[])
 {
-    std::cout << "Hello World!\n"; 
+	parameter para;
+	para = analyse_input_para(argc, argv);
+	printf("%d %s\n", para.k, para.path.c_str());
+	return 0;
 }
 
 // 运行程序: Ctrl + F5 或调试 >“开始执行(不调试)”菜单
