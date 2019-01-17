@@ -10,5 +10,6 @@ private:
 public:
 	Tour();
 	Tour(int node[], int len);
+	Tour(const Tour &);
 	int get_item(int index);
 };

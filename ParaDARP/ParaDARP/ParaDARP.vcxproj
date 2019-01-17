@@ -159,6 +159,7 @@
     <ClInclude Include="pch.h" />
     <ClInclude Include="Read.h" />
     <ClInclude Include="reconstruct.h" />
+    <ClInclude Include="Solution.h" />
     <ClInclude Include="tool.h" />
     <ClInclude Include="Tour.h" />
   </ItemGroup>
@@ -171,6 +172,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="Read.cpp" />
+    <ClCompile Include="Solution.cpp" />
     <ClCompile Include="tool.cpp" />
     <ClCompile Include="Tour.cpp" />
   </ItemGroup>

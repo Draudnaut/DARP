@@ -15,6 +15,13 @@ Tour::Tour(int node[], int len)
 	}
 }
 
+Tour::Tour(const Tour &a)
+{
+	nodelist_len = a.nodelist_len;
+	for (int i = 0; i < nodelist_len; i++)
+		nodelist[i] = a.nodelist[i];
+}
+
 int Tour::get_item(int index)
 {
 	return nodelist[index];
