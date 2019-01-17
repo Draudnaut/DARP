@@ -4,6 +4,7 @@
 #include "pch.h"
 #include "Read.h"
 #include "config.h"
+#include "tool.h"
 #include <iostream>
 #include <algorithm>
 #include <ctime>
@@ -22,7 +23,8 @@ int main(int argc,char* argv[])
 	end = clock();
 	while ((double)(end-start)/CLOCKS_PER_SEC<60) //count one minute to shutdown
 	{
-		
+		divide(belong, vertex_number / 2,para.k);
+
 		end = clock();
 	}
 	return 0;
