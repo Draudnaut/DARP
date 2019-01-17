@@ -26,3 +26,12 @@ int Tour::get_item(int index)
 {
 	return nodelist[index];
 }
+
+void Tour::add_point(int point, int index)
+{
+	for (int i = nodelist_len; i > index; i--) {
+		nodelist[i] = nodelist[i - 1];
+	}
+	nodelist[index] = point;
+	nodelist_len++;
+}

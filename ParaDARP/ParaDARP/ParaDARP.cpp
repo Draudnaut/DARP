@@ -5,11 +5,11 @@
 #include "Read.h"
 #include "config.h"
 #include "tool.h"
+#include "Solution.h"
 #include <iostream>
 #include <algorithm>
 #include <ctime>
 #include <thread>
-int a[10] = { 0,1,2,3,4,5,6,7,8,9 };
 int main(int argc,char* argv[])
 {
 	parameter para;
@@ -23,12 +23,8 @@ int main(int argc,char* argv[])
 	time_t start, end;
 	start = clock();
 	end = clock();
-	while ((double)(end-start)/CLOCKS_PER_SEC<60) //count one minute to shutdown
-	{
-		divide(belong, vertex_number / 2,para.k);
-		
-		end = clock();
-	}
+	Solution s(vertex_list+1, vertex_number / 2, vertex_number);
+	printf("%d\n", s.get_length());
 	return 0;
 }
 
