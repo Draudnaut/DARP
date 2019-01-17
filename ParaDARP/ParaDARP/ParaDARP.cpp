@@ -8,6 +8,8 @@
 #include <iostream>
 #include <algorithm>
 #include <ctime>
+#include <thread>
+int a[10] = { 0,1,2,3,4,5,6,7,8,9 };
 int main(int argc,char* argv[])
 {
 	parameter para;
@@ -24,7 +26,7 @@ int main(int argc,char* argv[])
 	while ((double)(end-start)/CLOCKS_PER_SEC<60) //count one minute to shutdown
 	{
 		divide(belong, vertex_number / 2,para.k);
-
+		
 		end = clock();
 	}
 	return 0;
