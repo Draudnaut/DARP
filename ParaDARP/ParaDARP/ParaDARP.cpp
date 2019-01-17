@@ -6,20 +6,29 @@
 #include "config.h"
 #include <iostream>
 #include <algorithm>
-Point vertex_list[maxn];
-int cmp(Point a, Point b) {
-	if (a.time_window_end < b.time_window_end) return 1;
-	else if (a.time_window_start < b.time_window_start) return 1;
-	else return 0;
+#include <ctime>
+bool cmp(const Point a, const Point b) {
+	if (a.time_window_end!=b.time_window_end)return a.time_window_end < b.time_window_end;
+	else return a.time_window_start < b.time_window_start;
 }
 int main(int argc,char* argv[])
 {
 	parameter para;
 	int vehicle_number, vehicle_distance, vehicle_capacity, ridetime,vertex_number;
+	Point vertex_list[maxn];
+	int belong[maxn];
 	para = analyse_input_para(argc, argv);
+	/*read the data*/
 	read_data(para.path, vertex_list,vehicle_number,vehicle_distance,vehicle_capacity,ridetime,vertex_number);
-	std::sort(vertex_list + 1, vertex_list + vertex_number + 1, cmp);
-
+	/*sort the point*/
+	time_t start, end;
+	start = clock();
+	end = clock();
+	while ((double)(end-start)/CLOCKS_PER_SEC<60)
+	{
+		
+		end = clock();
+	}
 	return 0;
 }
 
