@@ -27,13 +27,16 @@ int main(int argc,char* argv[])
 	time_t start, end;
 	start = clock();
 	end = clock();
-	Solution s(vertex_list+1, vertex_number / 2, vertex_number);
-	divide(belong, s.get_length(), para.k);
-	memset(thread_belong, 0, sizeof(thread_belong));
-	for (int i = 1; i <= vertex_number / 2; i++) {
-		thread_belong[belong[i]][0]+=2;
-		thread_belong[belong[i]][thread_belong[belong[i]][0]-1] = i;
-		thread_belong[belong[i]][thread_belong[belong[i]][0] ] = i+vertex_number/2;
+	while ((double)(end - start) / CLOCKS_PER_SEC <= 60) {
+		Solution s(vertex_list+1, vertex_number / 2, vertex_number);
+		divide(belong, s.get_length(), para.k);
+		memset(thread_belong, 0, sizeof(thread_belong));
+		for (int i = 1; i <= vertex_number / 2; i++) {
+			thread_belong[belong[i]][0]+=2;
+			thread_belong[belong[i]][thread_belong[belong[i]][0]-1] = i;
+			thread_belong[belong[i]][thread_belong[belong[i]][0] ] = i+vertex_number/2;
+		}
+		end = clock();
 	}
 	return 0;
 }
