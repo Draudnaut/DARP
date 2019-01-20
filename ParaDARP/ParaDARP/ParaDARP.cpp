@@ -10,6 +10,9 @@
 #include <algorithm>
 #include <ctime>
 #include <thread>
+#include <vector>
+int thread_belong[102][2005];
+//thread_belong[i][j] means the j-th point in thread i.
 int main(int argc,char* argv[])
 {
 	parameter para;
@@ -24,7 +27,13 @@ int main(int argc,char* argv[])
 	start = clock();
 	end = clock();
 	Solution s(vertex_list+1, vertex_number / 2, vertex_number);
-	printf("%d\n", s.get_length());
+	divide(belong, s.get_length(), para.k);
+	memset(thread_belong, 0, sizeof(thread_belong));
+	for (int i = 1; i <= vertex_number / 2; i++) {
+		thread_belong[belong[i]][0]+=2;
+		thread_belong[belong[i]][thread_belong[belong[i]][0]-1] = i;
+		thread_belong[belong[i]][thread_belong[belong[i]][0] ] = i+vertex_number/2;
+	}
 	return 0;
 }
 
