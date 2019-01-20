@@ -11,6 +11,7 @@
 #include <ctime>
 #include <thread>
 #include <vector>
+
 int thread_belong[102][2005];
 //thread_belong[i][j] means the j-th point in thread i.
 //please set setting.
@@ -27,7 +28,9 @@ int main(int argc,char* argv[])
 	time_t start, end;
 	start = clock();
 	end = clock();
+	/*construct solution s*/
 	Solution s(vertex_list+1, vertex_number / 2, vertex_number);
+	/*improvement*/
 	while ((double)(end - start) / CLOCKS_PER_SEC <= 60.0) 
 	{
 		divide(belong, s.get_length(), para.k);
@@ -41,6 +44,8 @@ int main(int argc,char* argv[])
 		end = clock();
 		s.update();
 	}
+	/*result*/
+	//need implementation
 	return 0;
 }
 
