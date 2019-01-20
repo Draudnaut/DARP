@@ -33,3 +33,7 @@ Tour Solution::getitem(int index)
 	}
 	return tourlist[index];
 }
+
+void Solution::update()
+{
+}

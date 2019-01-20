@@ -13,4 +13,5 @@ public:
 	Solution(Point list_point[], int len,int vertex_number);
 	int get_length() { return length; };
 	Tour getitem(int index);
+	void update();
 };
