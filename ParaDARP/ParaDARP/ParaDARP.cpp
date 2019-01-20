@@ -13,6 +13,7 @@
 #include <vector>
 int thread_belong[102][2005];
 //thread_belong[i][j] means the j-th point in thread i.
+//please set setting.
 int main(int argc,char* argv[])
 {
 	parameter para;
