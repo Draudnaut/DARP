@@ -28,7 +28,7 @@ int main(int argc,char* argv[])
 	start = clock();
 	end = clock();
 	Solution s(vertex_list+1, vertex_number / 2, vertex_number);
-	while ((double)(end - start) / CLOCKS_PER_SEC <= 60) 
+	while ((double)(end - start) / CLOCKS_PER_SEC <= 60.0) 
 	{
 		divide(belong, s.get_length(), para.k);
 		memset(thread_belong, 0, sizeof(thread_belong));
