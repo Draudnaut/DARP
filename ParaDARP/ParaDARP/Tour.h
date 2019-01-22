@@ -16,4 +16,5 @@ public:
 	int get_item(int index);
 	void add_point(int point,int index);
 	int get_length() { return nodelist_len; };
+	void copy_nodelist(int new_nodelist[]);
 };

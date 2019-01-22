@@ -59,3 +59,11 @@ void Tour::add_point(int point, int index)
 	nodelist[index] = point;
 	nodelist_len++;
 }
+
+void Tour::copy_nodelist(int new_nodelist[])
+{
+	for (int i = 0; i < nodelist_len; i++)
+	{
+		new_nodelist[i] = nodelist[i];
+	}
+}
