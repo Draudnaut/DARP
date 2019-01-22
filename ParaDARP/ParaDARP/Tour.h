@@ -17,5 +17,5 @@ public:
 	void add_point(int point,int index);
 	int get_length() { return nodelist_len; };
 	void copy_nodelist(int new_nodelist[]);
-	double Evaluation(Point a[]);
+	double Evaluation(Point a[],int Vehicle_capacity);
 };

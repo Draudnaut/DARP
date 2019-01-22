@@ -68,7 +68,7 @@ void Tour::copy_nodelist(int new_nodelist[])
 	}
 }
 
-double Tour::Evaluation(Point a[])
+double Tour::Evaluation(Point a[],int vehicle_capacity)
 {
 	/*check feasibilty*/
 	double time = distance(a,0,nodelist[0])+a[nodelist[0]].service_time;
@@ -78,6 +78,12 @@ double Tour::Evaluation(Point a[])
 		if (time > a[nodelist[i]].time_window_end) return -1;
 		time += a[nodelist[i]].service_time;
 	}
+	int total_weight = 0;
+	for (int i = 0; i < nodelist_len; i++)
+	{
+		total_weight += a[nodelist[i]].quality;
+	}
+	if (total_weight > vehicle_capacity) return -1;
 	/*return cost*/
 	double cost = distance(a, 0, nodelist[0]);
 	for (int i = 1; i < nodelist_len; i++)
