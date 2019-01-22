@@ -1,16 +1,16 @@
 # DARP
 ## introduction
-research Project for DARP
-This is the code for our research in Dial-A-Ride Problem.
+this repository stores the code for the research project about Dial-a-ride problems(DARP).
 ## configuration setting
 please set the project as shown in pictures below.
 ![settings1](https://github.com/henhimicons/image-folder/blob/master/fig1.png)
 ![settings2](https://github.com/henhimicons/image-folder/blob/master/fig2.png)
 ![settings2](https://github.com/henhimicons/image-folder/blob/master/fig3.png)
 ![settings2](https://github.com/henhimicons/image-folder/blob/master/fig4.png)
-## how to run the code
-please install Visual Studio 2017.  
-get the dataset from here.  
--k : how many thread will be created in the compute stage.  
+## parameter meaning
+-k : how many thread will be created in the compute stage.    
 -path : the path where the dataset file locates.  
-set the -k and the -path then run.  
+## how to run the code
+Please install Visual Studio 2017.  
+Get the dataset from here.  
+set the -k and the -path in the configuration page then run.  
