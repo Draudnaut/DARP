@@ -6,6 +6,15 @@ Solution::Solution()
 	length = 0;
 }
 
+Solution::Solution(Solution & s)
+{
+	length = s.length;
+	for (int i = 0; i < length; i++)
+	{
+		tourlist[i] = s.tourlist[i];
+	}
+}
+
 Solution::Solution(Tour listtour[], int len)
 {
 	length = len;

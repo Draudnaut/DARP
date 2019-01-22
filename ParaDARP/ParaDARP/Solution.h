@@ -9,6 +9,7 @@ private:
 	int length;
 public:
 	Solution();
+	Solution(Solution &s);
 	Solution(Tour listtour[], int len);
 	Solution(Point list_point[], int len,int vertex_number);
 	int get_length() { return length; };
