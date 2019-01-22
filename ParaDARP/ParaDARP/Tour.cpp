@@ -1,9 +1,33 @@
 #include "pch.h"
 #include "Tour.h"
 
+void Tour::remove_point(int index)
+{
+	for (int i=nodelist_len-1;i>index;i--)
+	{
+		nodelist[i - 1] = nodelist[i];
+	}
+	nodelist_len--;
+}
+
 Tour::Tour()
 {
 	nodelist_len = 0;
+}
+
+void Tour::delete_request(int req1,int req2)
+{
+	int index1, index2;
+	for (int i = 0; i < nodelist_len; i++)
+	{
+		if (nodelist[i] == req1) index1 = i;
+	}
+	remove_point(index1);
+	for (int i = 0; i < nodelist_len; i++) 
+	{
+		if (nodelist[i] == req2) index1 = i;
+	}
+	remove_point(index1);
 }
 
 Tour::Tour(int node[], int len)

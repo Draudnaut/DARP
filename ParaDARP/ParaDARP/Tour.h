@@ -7,8 +7,10 @@ class Tour
 private:
 	int nodelist[const_node_length];
 	int nodelist_len;
+	void remove_point(int index);
 public:
 	Tour();
+	void delete_request(int req1,int req2);
 	Tour(int node[], int len);
 	Tour(const Tour &);
 	int get_item(int index);
