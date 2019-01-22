@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "Tour.h"
-
+#include "tool.h"
 void Tour::remove_point(int index)
 {
 	for (int i=nodelist_len-1;i>index;i--)
@@ -71,11 +71,18 @@ void Tour::copy_nodelist(int new_nodelist[])
 double Tour::Evaluation(Point a[])
 {
 	/*check feasibilty*/
-	double time = 0;
+	double time = distance(a,0,nodelist[0])+a[nodelist[0]].service_time;
 	for (int i = 1; i < nodelist_len; i++) 
 	{
-
+		time += distance(a,nodelist[i - 1], nodelist[i]);
+		if (time > a[nodelist[i]].time_window_end) return -1;
+		time += a[nodelist[i]].service_time;
 	}
 	/*return cost*/
-	return 0.0;
+	double cost = distance(a, 0, nodelist[0]);
+	for (int i = 1; i < nodelist_len; i++)
+	{
+		cost += distance(a, nodelist[i - 1], nodelist[i]);
+	}
+	return cost;
 }
