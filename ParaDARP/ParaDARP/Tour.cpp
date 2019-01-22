@@ -67,3 +67,15 @@ void Tour::copy_nodelist(int new_nodelist[])
 		new_nodelist[i] = nodelist[i];
 	}
 }
+
+double Tour::Evaluation(Point a[])
+{
+	/*check feasibilty*/
+	double time = 0;
+	for (int i = 1; i < nodelist_len; i++) 
+	{
+
+	}
+	/*return cost*/
+	return 0.0;
+}

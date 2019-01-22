@@ -3,4 +3,5 @@
 
 void construct_new(Solution & s)
 {
+	
 }
