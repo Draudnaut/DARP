@@ -18,7 +18,8 @@ void read_data(std::string path,Point point_list[],int &vehicle_number,int &vehi
 	char path_operate[200];
 	strcpy(path_operate, path.c_str());
 	FILE* input=fopen(path_operate,"r");
-	if (input == NULL) {
+	if (input == NULL) 
+	{
 		printf("input file doesn't exsit.\n");
 		exit(-1);
 	}
@@ -26,7 +27,8 @@ void read_data(std::string path,Point point_list[],int &vehicle_number,int &vehi
 	char name[100];
 	fscanf(input, "%s", dataset_name);
 	int index = 8;
-	while (dataset_name[index]) {
+	while (dataset_name[index]) 
+	{
 		name[index - 8] = dataset_name[index];
 		index++;
 	}

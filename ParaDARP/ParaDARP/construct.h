@@ -1,3 +1,5 @@
 #pragma once
 #include "Solution.h"
-void construct_new(Tour s[],int len);
+#include <vector>
+#include <algorithm>
+void construct_new(Point a[],Tour s[],int len,int conflict[][2007]);

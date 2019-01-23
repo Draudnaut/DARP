@@ -13,6 +13,7 @@
 #include <vector>
 
 int thread_belong[102][2005];
+int conflict[2007][2007];
 //thread_belong[i][j] means the j-th point in thread i.
 //please set setting.
 int main(int argc,char* argv[])
@@ -24,7 +25,6 @@ int main(int argc,char* argv[])
 	para = analyse_input_para(argc, argv);
 	/*read the data*/
 	read_data(para.path, vertex_list,vehicle_number,vehicle_distance,vehicle_capacity,ridetime,vertex_number);
-	/*sort the point*/
 	time_t start, end;
 	start = clock();
 	end = clock();
@@ -32,6 +32,8 @@ int main(int argc,char* argv[])
 	Solution s(vertex_list+1, vertex_number / 2, vertex_number);
 	/*improvement*/
 	int iterator_count = 0;
+	memset(conflict, 0, sizeof(conflict));
+	conflict_table(vertex_list, conflict,vertex_number);
 	while ((double)(end - start) / CLOCKS_PER_SEC <= 60.0) 
 	{
 		divide(belong, s.get_length(), para.k);
@@ -43,7 +45,8 @@ int main(int argc,char* argv[])
 			thread_belong[belong[i]][thread_belong[belong[i]][0] ] = i+vertex_number/2;
 		}
 		end = clock();
-		printf("iterator:%d , cost = %.4lf\n", iterator_count++,s.Evaluate(vertex_list, vehicle_capacity));
+		if (iterator_count%100000==0) printf("iterator:%d , cost = %.4lf\n", iterator_count,s.Evaluate(vertex_list, vehicle_capacity));
+		iterator_count++;
 	}
 	/*result*/
 	//need implementation
