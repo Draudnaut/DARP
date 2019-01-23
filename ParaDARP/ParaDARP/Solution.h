@@ -15,4 +15,5 @@ public:
 	int get_length() { return length; };
 	Tour getitem(int index);
 	void update();
+	double Evaluate(Point a[], int vehicle_capacity);
 };

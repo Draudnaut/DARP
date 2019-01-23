@@ -46,3 +46,13 @@ Tour Solution::getitem(int index)
 void Solution::update()
 {
 }
+
+double Solution::Evaluate(Point a[],int vehicle_capacity)
+{
+	double sum = 0.0;
+	for (int i = 0; i < length; i++)
+	{
+		sum += tourlist[i].Evaluation(a, vehicle_capacity);
+	}
+	return sum;
+}
