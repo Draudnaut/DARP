@@ -11,7 +11,7 @@ please set the project as shown in pictures below.
 ![settings](https://github.com/henhimicons/image-folder/blob/master/fig6.png)
 ## parameter meaning
 -k : how many thread will be created in the compute stage.    
--path : the path where the dataset file locates.  
+-path :indicates the code where is the input dataset file locates.  
 ## how to run the code
 Please install Visual Studio 2017.  
 Get the dataset from here.  
